@@ -1,0 +1,24 @@
+Hello, 
+Select search type followed by parameter
+<br><br>
+<form>   
+    <div style="margin-left: 10px;"></div>    
+    <select name="choice" [(ngModel)]="pref">
+        <option *ngFor="let item of choice" [ngValue]="item">{{item}}</option>
+    </select>
+    <input type="text" name="search" [(ngModel)]="value">
+    <button name="choice" type="submit" (click)="search()">Search</button>   
+</form>  
+<div>
+    <br>
+    <tr><th>fname</th><th>lname</th><th>email</th><th>st_id</th></tr>
+    <br>
+    <div *ngFor="let s of student">
+        <tr>
+            <td>{{s.fname}}</td>
+            <td>{{s.lname}}</td>
+            <td>{{s.email}}</td>
+            <td>{{s.st_id}}</td>
+        </tr>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+Hi User, {{curr.fname}}
+<br><br>
+
+<form>   
+    <!--view personal information-->
+    <br><br>
+    <button name="view_all_classmates" type="submit" (click)="viewClassmates()">View Classmates</button>
+
+    <ul>
+        <li *ngFor="let s of students;">
+            {{s.fname}}
+        </li>
+    </ul>
+    
+
+</form>  

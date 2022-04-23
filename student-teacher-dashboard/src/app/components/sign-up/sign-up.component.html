@@ -1,0 +1,52 @@
+
+
+<section class="vh-200 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Registration Form</h3>
+<form action="/sendInfo" Content-type="multipart/form-data" enctype="multipart/form-data" method="post" #myForm="ngForm" (ngSubmit)="onSubmit()">
+    <div class="form-group" style="margin: 50px;" >
+        <div>
+            <span>
+                First Name <input type="text" [(ngModel)] = "student.fname" name="fname"> 
+                <br>
+                <br>
+                Last Name <input type="text" [(ngModel)] = "student.lname" name="lname" > 
+                <br>
+            </span>
+        </div><br>
+        <div>            
+                Email <input style="margin-left: 40px;" type="email" id="email" name="email" [(ngModel)] = "student.email">
+                <br>
+                <br>
+                UserId<input style="margin-left: 38px;" type="text" id="id" name="id" [(ngModel)] = "student.st_id">
+        </div><br>
+        <div>
+            <div>
+                Gender<input style="margin-left: 20px;" type="text" id="gender" size="1px" name="gender" [(ngModel)]= "student.gender">  
+                Class<input style="margin-left: 20px;" type="text" id="class" size="1px" name="class" [(ngModel)]= "student.class">
+                Section<input style="margin-left: 20px;" type="text" id="section" size="1px" name="section" [(ngModel)]= "student.section">
+                <br>
+            </div>
+        </div><br>
+        <div>
+            <div>
+                Phno.<input placeholder="enter 10 digit no." style="margin-left: 20px;" size="15px" type="text" id="phno" name="phno" [(ngModel)]= "student.phno">  
+                <br><br>
+                Prev class Marksheet <input name="marksheet"  type="file" id="marksheet" size="5px" (change)="onFileSelected($event)">
+                <br><br>Password <input type="password"  placeholder="minimum 6 digits" id="password" name="password" [(ngModel)]= "student.password" >
+        </div>
+
+        </div><br>
+        <button class="btn btn-primary" type="submit" value="submit" >Submit</button>   
+    </div>            
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
