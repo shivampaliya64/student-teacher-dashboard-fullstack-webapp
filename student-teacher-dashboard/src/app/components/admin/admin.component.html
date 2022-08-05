@@ -1,0 +1,36 @@
+
+ <h4 style="margin-left:20px; margin-top: 20px;">Upload teachers data file to update the existing information</h4>
+ <form action="/uploadfile" enctype="multipart/form-data" method="post" (ngSubmit)="uploadCSV()">
+   <input class="btn btn-primary" type="file" name="uploadfile" accept='.csv' style="margin-left:20px;" (change)="onFileSelected($event)"> 
+   <input class="btn btn-primary" type="submit" value="Upload CSV" style="margin-left:20px;">
+ </form>  
+<div>
+
+    
+<button type="submit" class="btn btn-primary" (click)="viewInfo()" style="margin: 20px">Refresh to get pending requests</button>   
+</div>
+<table style="margin-left: 25px;">
+    <thead>
+        <tr>
+            <th>Sr. No.</th>
+            <th >Id.</th>
+            <th >Fname</th>
+            <th >Lname</th>
+            <th >Email</th>
+            <th >marksheet</th>
+            <th >Approval</th>            
+        </tr>
+    </thead>            
+    <tbody>
+        <tr *ngFor="let s of student; let indexOfelement=index ; " >
+            <td *ngIf="!s.checked"> {{indexOfelement+1}}</td>
+            <td *ngIf="!s.checked"> {{s.st_id}}</td>
+            <td *ngIf="!s.checked"> {{s.fname}}</td>
+            <td *ngIf="!s.checked"> {{s.lname}}</td>
+            <td *ngIf="!s.checked"> {{s.email}}</td>
+        <!-- <td> marksheet: <img [src]=getSantizeUrl(s.marksheet) >   </td> -->
+            <td *ngIf="!s.checked"> marksheet: <a href={{s.marksheet}} target="_blank">link</a></td>
+            <td *ngIf="!s.checked"><button (click)="approve(indexOfelement)"> Accept </button><button (click)="reject(indexOfelement)"> Reject </button> <br><br></td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,38 @@
+<div style="margin: 10px;">
+Hi User, {{curr.fname}}
+</div>
+<br><br>
+
+<form style="margin-left: 10px">   
+    <!--view personal information-->
+    <button class="btn-primary" name="view_all_classmates" type="submit" (click)="viewClassmates()" style="margin-left: 10px;">Show/Hide Classmates</button>
+    
+    
+    <br><br>
+    
+    <div *ngIf="showClassmates">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>        
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let s of students;">
+                <td>{{s.fname}} </td>
+                <td>{{s.lname}}</td>
+                <td>{{s.email}}</td>
+            </tr>
+        </tbody>
+      </table>
+
+    </div>
+    
+      <button class="btn-primary" name="view_all_classmates" type="submit" (click)="viewSubjects()" style="margin-left: 10px;">View/Hide Subjects</button>
+      <br>
+      <div *ngIf="viewCourses" style="margin: 5px;">
+        The subjects alloted for respective class are {{subjects}}
+      </div>
+</form>  

@@ -1,0 +1,20 @@
+export class Teacher {
+    fname:string;
+    lname:string;
+    email:string;
+    t_id:string;
+    pass:string;
+    gender:string;
+    phno:number;
+    class:number;
+    constructor(){
+        this.fname='',
+        this.lname='',
+        this.email='';
+        this.t_id='';
+        this.pass='';
+        this.gender='';
+        this.phno=0;
+        this.class=0;
+    }
+}
